@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost:3307';
+$host = 'localhost:3306';
 $user = 'root';
 $pass = '';
-$db = 'burger_house';
+$db = 'hamburgueria';
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {

@@ -1,1 +1,219 @@
-/* CSS do login/cadastro com animação que enviei antes */
+/* css/acesso.css
+   Slide lateral + fade para login / cadastro
+*/
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Corpo */
+body {
+    background: linear-gradient(-45deg, #0f0f0f, #121212, #0f0f0f, #121212);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal do card */
+.container {
+    width: min(92vw, 420px);
+    background: #1e1e1e;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    /* importante para esconder forms que saem do lado */
+}
+
+/* Título */
+h1 {
+    color: #0ff;
+    text-align: center;
+    margin-bottom: 14px;
+    font-size: 1.3rem;
+}
+
+/* Mensagem de erro / aviso */
+.msg {
+    background: #ff4c4c;
+    color: #110;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Area que contém os forms (um sobre o outro) */
+.forms {
+    position: relative;
+    min-height: 360px;
+}
+
+/* Form padrão: posicionado fora à direita */
+form {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* começa fora à direita */
+    width: 100%;
+    opacity: 0;
+    transform: translateX(8%);
+    /* leve deslocamento para efeito */
+    transition:
+        left 0.45s cubic-bezier(.22, .9, .22, 1),
+        opacity 0.35s ease,
+        transform 0.45s cubic-bezier(.22, .9, .22, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #2a2a2a;
+    padding: 18px;
+    border-radius: 10px;
+    pointer-events: none;
+    /* impede interação quando não ativo */
+    will-change: left, opacity, transform;
+}
+
+/* Form ativo: no centro */
+form.active {
+    left: 0;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* Form saindo para a esquerda */
+form.slide-out-left {
+    left: -100%;
+    opacity: 0;
+    transform: translateX(-8%);
+    pointer-events: none;
+}
+
+/* Form saindo para a direita */
+form.slide-out-right {
+    left: 100%;
+    opacity: 0;
+    transform: translateX(8%);
+    pointer-events: none;
+}
+
+/* Cabeçalho do form */
+form h2 {
+    color: #0ff;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Inputs e selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #121212;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+/* foco acessível */
+input:focus,
+select:focus {
+    box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.08);
+    border-color: #00e6e6;
+}
+
+/* Botões */
+button {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    background: #0ff;
+    color: #121212;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #00d4d4;
+}
+
+/* Link de troca */
+.switch {
+    margin-top: 8px;
+    font-size: 0.92rem;
+    color: #0ff;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    user-select: none;
+}
+
+/* detalhes e summary (quando usados) */
+details {
+    background: transparent;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    body {
+        align-items: flex-start;
+        padding-top: 24px;
+        min-height: 100dvh;
+    }
+
+    .container {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .forms {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.05rem;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .forms {
+        min-height: 340px;
+    }
+}
+
+/* Pequenas melhorias visuais */
+label {
+    font-size: 0.92rem;
+    color: #d6f7f7;
+}

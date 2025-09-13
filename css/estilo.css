@@ -1,17 +1,138 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
 body {
-    background: #0f0f0f;
-    color: white;
-    font-family: Arial;
+    background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #0f0f0f, #1a1a1a);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.container {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 800px;
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: cyan;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
     text-align: center;
 }
 
+.msg {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid cyan;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* FORMULÁRIOS */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input,
+form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: #fff;
+}
+
+form button {
+    background: cyan;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #00ffffb3;
+}
+
+/* PRODUTOS */
+.produto-card {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+}
+
+.produto-card h3 {
+    margin-bottom: 10px;
+}
+
+.produto-card label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+/* TABELAS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th,
+table td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #111;
+    color: cyan;
+}
+
+table tr:nth-child(even) {
+    background: #2a2a2a;
+}
+
+/* BOTÕES GERAIS */
 .btn {
     display: inline-block;
-    background: #0ff;
-    color: #121212;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 8px;
-    text-decoration: none;
+    padding: 10px 20px;
+    background: cyan;
+    color: #000;
     font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.btn:hover {
+    background: #00ffffb3;
 }
