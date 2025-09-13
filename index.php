@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang='pt-BR'>
-<head><meta charset='UTF-8'><title>Hamburgueria</title></head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Hamburgueria</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
 <body>
-<h1>Bem-vindo à Hamburgueria</h1>
-<a href='acesso.php'>Login / Cadastro</a>
-<a href='painel_cliente.php'>Cardápio</a>
+    <div class="home-container">
+        <h1>🍔 Bem-vindo à Hamburgueria</h1>
+        <a class="btn" href="acesso.php">Login / Cadastro</a>
+        <a class="btn" href="painel_cliente.php">Ver Cardápio</a>
+    </div>
 </body>
 </html>

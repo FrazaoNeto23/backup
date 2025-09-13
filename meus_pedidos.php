@@ -1,3 +1,3 @@
 <?php
-// Página para listar pedidos do cliente
+// Aqui o cliente pode ver os pedidos realizados
 ?>
